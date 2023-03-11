@@ -7,8 +7,20 @@ function App() {
     const [search, setSearch] = React.useState("")
 
     function setQuery(e) {
-        setSearch(prevState => prevState = e.target.value)
+         setSearch(prevState => prevState = e.target.value)
     }
+
+    function debounce(func, timeout = 300) {
+        let timer;
+        return (...args) => {
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                func.apply(this, args);
+            }, timeout);
+        };
+    }
+
+    let newQuery = debounce((e) => setQuery(e))
 
     return (
         <div className="App">
@@ -20,8 +32,7 @@ function App() {
                     <input
                         type="search"
                         placeholder={"Filter by name"}
-                        onChange={setQuery}
-                        value={search}
+                        onChange={newQuery}
                     />
                 </div>
                 <CardList
