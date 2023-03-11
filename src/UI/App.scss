@@ -9,6 +9,7 @@
   .container {
     max-width: 1020px;
     margin: 0 auto;
+
     .logo {
       img {
         display: block;
@@ -19,6 +20,7 @@
     .search {
       margin-bottom: 61px;
       margin-top: 16px;
+
       input {
         width: 100%;
         padding: 12px 20px;
@@ -37,7 +39,8 @@
       grid-template-columns: repeat(auto-fill, 240px);
       grid-gap: 20px;
       justify-content: center;
-    padding-bottom: 40px;
+      padding-bottom: 40px;
+
       .card-item {
         border-radius: 4px 4px 4px 4px;
         -moz-border-radius: 4px 4px 4px 4px;
@@ -51,7 +54,13 @@
         border: 1px solid #ffffff;
         overflow: hidden;
 
-        cursor: pointer;
+
+        a {
+          color: black;
+          text-decoration: none;
+          cursor: pointer;
+
+        }
 
         .card-img {
           img {

@@ -1,15 +1,26 @@
 import React from 'react';
+import {Link, useParams} from "react-router-dom";
 
-const Card = ({personImg, personName,personRace}) => {
+const Card = (props) => {
+    const {
+        personImg,
+        personName,
+        personRace,
+        id
+    } = props;
+
     return (
-        <div className={"card-item"}>
-          <div className={"card-img"}>
-              <img src={personImg} alt="person img"/>
-          </div>
-            <div className={"card-text"}>
-                <p>{personName}</p>
-                <p>{personRace}</p>
-            </div>
+        <div
+            className={"card-item"}>
+            <Link to={`card/${id}`}>
+                <div className={"card-img"}>
+                    <img src={personImg} alt="person img"/>
+                </div>
+                <div className={"card-text"}>
+                    <p>{personName}</p>
+                    <p>{personRace}</p>
+                </div>
+            </Link>
         </div>
     );
 };
