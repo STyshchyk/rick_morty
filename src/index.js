@@ -1,4 +1,4 @@
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import { createHashRouter, RouterProvider} from "react-router-dom";
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
@@ -10,7 +10,7 @@ import {store} from "./store/store"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
         path: "/",
         element: <Main/>,
