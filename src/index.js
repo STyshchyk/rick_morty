@@ -14,7 +14,6 @@ const router = createHashRouter([
     {
         path: "/",
         element: <Main/>,
-        errorElement: <h1> Error card</h1>
     },
     {
         path: "card/:id",
