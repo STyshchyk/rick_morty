@@ -1,23 +1,24 @@
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
-import App from './App';
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import Card from "./Components/Card";
+import './scss/all.scss'
+import Character from "./Pages/Character";
+import Main from './Pages/Main';
 import {Provider} from "react-redux";
-
 import {store} from "./store/store"
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <App/>,
+        element: <Main/>,
         errorElement: <h1> Error card</h1>
     },
     {
         path: "card/:id",
-        element: <Card/>,
+        element: <Character/>,
         errorElement: <h1> Error card</h1>
     }
 ]);
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
 root.render(
     <React.StrictMode>
         <Provider store={store}>
-            <RouterProvider router={router} />
+            <RouterProvider router={router}/>
         </Provider>
     </React.StrictMode>
 );

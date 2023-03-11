@@ -1,9 +1,8 @@
-import './App.scss';
 import React from 'react';
-import svgLogo from './UI/Logo.svg'
-import CardList from "./Components/CardList";
+import svgLogo from '../scss/Logo.svg'
+import CardList from "../Components/CardList";
 
-function App() {
+function Main() {
     const [search, setSearch] = React.useState("")
 
     function setQuery(e) {
@@ -23,7 +22,7 @@ function App() {
     let newQuery = debounce((e) => setQuery(e))
 
     return (
-        <div className="App">
+        <div className="main-page">
             <div className={"container"}>
                 <div className={"logo"}>
                     <img src={svgLogo} alt="Logo" width={300} height={100}/>
@@ -43,4 +42,4 @@ function App() {
     );
 }
 
-export default App;
+export default Main;
