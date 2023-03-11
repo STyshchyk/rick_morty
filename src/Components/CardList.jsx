@@ -3,14 +3,23 @@ import Card from "./Card";
 import {useGetGoodsQuery} from "../store/cardApi";
 
 const CardList = ({filterQuery}) => {
-
     const {data, isLoading} = useGetGoodsQuery()
+
+    function sortItems() {
+        if (isLoading || filterQuery === "") return data;
+        return data.filter(elem => {
+            return elem.name.toLowerCase().includes(filterQuery.toLowerCase())
+        });
+
+    }
+
+    const sortedItems = sortItems();
 
     return (
         <div className={"card-wrapper"}>
             {
                 !isLoading
-                    ? data.map(elem => (
+                    ? sortedItems.map(elem => (
                         <Card
                             key={elem.id}
                             personImg={elem.image}
