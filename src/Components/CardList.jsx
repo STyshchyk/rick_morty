@@ -26,9 +26,10 @@ const CardList = ({filterQuery}) => {
                             personImg={elem.image}
                             personName={elem.name}
                             personRace={elem.species}
+                            id={elem.id}
                         />
                     ))
-                    : [...Array(10).keys()].map(elem => <MyLoader/>)
+                    : [...Array(10).keys()].map(elem => <MyLoader key={elem}/>)
             }
         </div>
     );
