@@ -7,16 +7,20 @@
     margin: 0 auto;
 
     .logo {
+      max-width: 600px;
+      margin: 0 auto;
       img {
         display: block;
         margin: 0 auto;
+        width: 100%;
+        height: 100%;
       }
     }
 
     .search {
       margin-bottom: 61px;
       margin-top: 16px;
-
+      padding: 0 8px;
       input {
         width: 100%;
         padding: 12px 20px;
@@ -69,7 +73,6 @@
             object-position: center center;
           }
         }
-
         .card-text {
           font-family: 'Roboto', sans-serif;
           font-style: normal;

@@ -1,12 +1,43 @@
 import React from 'react';
 import {useParams} from "react-router-dom";
 import {useGetItemQuery} from "../store/cardApi";
+import {useNavigate} from "react-router-dom";
+import arrowSvg from "../scss/arrow_back_24px.svg"
+import NavigateArrow from "../Components/NavigateArrow";
 
 const Character = () => {
+    const navigate = useNavigate();
+
+    function handleClick() {
+        navigate("/");
+    }
+
     const {id} = useParams();
-    const {data, isLoading} = useGetItemQuery(3)
-    if (isLoading) return <h1>Loading</h1>
+    const {data, isLoading, isError} = useGetItemQuery(id);
+
+    if (isLoading) return <h1>
+        Character is loading</h1>
+
+    if (isError) return <>
+        <div>An error has occurred!
+            <NavigateArrow
+                className={"navigate"}
+                onClick={handleClick}
+            >
+                <img src={arrowSvg} alt="char-img"/>
+                Go back
+            </NavigateArrow>
+        </div>
+    </>
+
     return (<div className={"char-page"}>
+        <NavigateArrow
+            className={"navigate"}
+            onClick={handleClick}
+        >
+            <img src={arrowSvg} alt="char-img"/>
+            Go back
+        </NavigateArrow>
         <div className="char-img">
             <img src={data.image} alt="char-img"/>
         </div>
