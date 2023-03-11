@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from "./Card";
 import {useGetGoodsQuery} from "../store/cardApi";
+import MyLoader from "./MyLoader";
 
 const CardList = ({filterQuery}) => {
     const {data, isLoading} = useGetGoodsQuery()
@@ -27,7 +28,7 @@ const CardList = ({filterQuery}) => {
                             personRace={elem.species}
                         />
                     ))
-                    : <h1>Data is loading</h1>
+                    : [...Array(10).keys()].map(elem => <MyLoader/>)
             }
         </div>
     );
