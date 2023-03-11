@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import svgLogo from './UI/Logo.svg'
+import {useGetGoodsQuery} from "./store/cardApi";
+import CardList from "./Components/CardList";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const {data, isLoading} = useGetGoodsQuery()
+    return (
+        <div className="App">
+            <div className={"logo"}>
+                <img src={svgLogo} alt="Logo" width={300} height={100}/>
+            </div>
+        </div>
+
+    );
 }
 
 export default App;
