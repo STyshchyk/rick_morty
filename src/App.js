@@ -2,14 +2,12 @@ import './App.scss';
 import React from 'react';
 import svgLogo from './UI/Logo.svg'
 import CardList from "./Components/CardList";
-import {useGetGoodsQuery} from "./store/cardApi";
 
 function App() {
     const [search, setSearch] = React.useState("")
-    const {data, isLoading} = useGetGoodsQuery()
 
     function setQuery(e) {
-         setSearch(prevState => prevState = e.target.value)
+        setSearch(prevState => prevState = e.target.value)
     }
 
     return (
@@ -27,8 +25,7 @@ function App() {
                     />
                 </div>
                 <CardList
-                    data={data}
-                    isLoading={isLoading}
+                    filterQuery={search}
                 />
             </div>
         </div>
