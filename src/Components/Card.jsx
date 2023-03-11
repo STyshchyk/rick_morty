@@ -10,9 +10,9 @@ const Card = (props) => {
     } = props;
 
     return (
-        <div
-            className={"card-item"}>
-            <Link to={`card/${id}`}>
+        <Link to={`card/${id}`}>
+            <div
+                className={"card-item"}>
                 <div className={"card-img"}>
                     <img src={personImg} alt="person img"/>
                 </div>
@@ -20,8 +20,9 @@ const Card = (props) => {
                     <p>{personName}</p>
                     <p>{personRace}</p>
                 </div>
-            </Link>
-        </div>
+
+            </div>
+        </Link>
     );
 };
 
