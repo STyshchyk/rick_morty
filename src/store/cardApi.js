@@ -12,6 +12,9 @@ export const cardApi = createApi({
                 return {
                     url: `${query}`,
                 }
+            },
+            transformResponse: (response) => {
+                return response.results.sort((a, b) => a.name.localeCompare(b.name));
             }
         }),
         getItem: build.query({

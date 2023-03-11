@@ -1,16 +1,16 @@
 import React from 'react';
 import Card from "./Card";
+import {useGetGoodsQuery} from "../store/cardApi";
 
-const CardList = (props) => {
-    const {
-        data = [],
-        isLoading = true
-    } = props;
+const CardList = ({filterQuery}) => {
+
+    const {data, isLoading} = useGetGoodsQuery()
+
     return (
         <div className={"card-wrapper"}>
             {
                 !isLoading
-                    ? data.results.map(elem => (
+                    ? data.map(elem => (
                         <Card
                             key={elem.id}
                             personImg={elem.image}
