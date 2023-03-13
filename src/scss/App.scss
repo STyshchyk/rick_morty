@@ -1,14 +1,23 @@
+@import "variables";
 
 .main-page {
   padding: 0 20px;
+  @include for-size(md) {
+    padding: 0 24px;
+  }
 
   .container {
     max-width: 1020px;
-    margin: 0 auto;
-
+    margin: 86px auto 0;
+    @include for-size(sm) {
+      margin-top: 92px;
+    }
     .logo {
       max-width: 600px;
       margin: 0 auto;
+      @include for-size(sm) {
+        max-width: 312px;
+      }
 
       img {
         display: block;
@@ -22,7 +31,10 @@
       margin-bottom: 61px;
       margin-top: 16px;
       padding: 0 8px;
-
+      @include for-size(sm) {
+        margin-top: 32px;
+        margin-bottom: 32px;
+      }
       input {
         width: 100%;
         padding: 12px 20px;
@@ -42,7 +54,10 @@
       grid-gap: 20px;
       justify-content: center;
       padding-bottom: 40px;
-
+      @include for-size(sm){
+        grid-template-columns: repeat(auto-fill, 312px);
+        grid-gap: 32px;
+      }
       a {
         color: black;
         text-decoration: none;
@@ -60,7 +75,6 @@
         -moz-box-shadow: 4px 19px 29px -1px rgba(130, 130, 130, 0.73);
         box-shadow: 4px 19px 29px -1px rgba(130, 130, 130, 0.73);
 
-        border: 1px solid #ffffff;
         overflow: hidden;
         transition: transform .5s ease;
 
@@ -71,7 +85,7 @@
         .card-item {
           .card-img {
             img {
-              height: 140px;
+              aspect-ratio: 1 / 0.8;
               width: 100%;
               object-fit: fill;
               object-position: center center;

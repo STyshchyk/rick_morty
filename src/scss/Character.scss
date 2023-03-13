@@ -1,3 +1,5 @@
+@import "variables";
+
 .char-page {
   max-width: 413px;
   margin: 0 auto;
@@ -7,10 +9,19 @@
   flex-direction: column;
 
   .char-img {
-    margin-top: 32px;
+    margin-top: 76px;
     max-width: calc(320px);
     aspect-ratio: 1 / 1;
     padding: 0 10px;
+
+    @include for-size(md) {
+      margin-top: 45px;
+      max-width: calc(225px);
+    }
+    @include for-size(sm) {
+      margin-top: 124px;
+      max-width: calc(150px);
+    }
 
     img {
       height: 100%;
@@ -26,6 +37,18 @@
     font-size: 48px;
     line-height: 56px;
     padding: 0 10px;
+
+    @include for-size(md) {
+      font-weight: 400;
+      font-size: 40px;
+      line-height: 38px;
+      text-align: center;
+    }
+    @include for-size(sm) {
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 38px;
+    }
   }
 
   h4 {
@@ -35,6 +58,12 @@
     font-weight: 300;
     font-size: 20px;
     line-height: 24px;
+    @include for-size(md) {
+      width: 100%;
+      text-align: left;
+      margin-left: 20px;
+    }
+
   }
 
   .char-info {
@@ -43,8 +72,11 @@
     flex-direction: column;
     width: 100%;
     padding: 0 10px 20px;
-    p {
+    @include for-size(md) {
+      padding: 0 32px 20px;
+    }
 
+    p {
       display: flex;
       flex-direction: column;
       font-family: 'Roboto', sans-serif;
@@ -62,6 +94,7 @@
     }
   }
 }
+
 .navigate {
   position: absolute;
   display: flex;
@@ -75,4 +108,7 @@
   font-size: 18px;
   line-height: 21px;
   cursor: pointer;
+  @include for-size(md) {
+    left: 12px;
+  }
 }
