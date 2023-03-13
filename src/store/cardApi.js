@@ -15,7 +15,18 @@ export const cardApi = createApi({
             },
             transformResponse: (response) => {
                 return response.results.sort((a, b) => a.name.localeCompare(b.name));
-            }
+            },
+            serializeQueryArgs: ({ endpointName }) => {
+                return endpointName
+            },
+            // Always merge incoming data to the cache entry
+            merge: (currentCache, newItems) => {
+                currentCache.push(...newItems)
+            },
+            // Refetch when the page arg changes
+            forceRefetch({ currentArg, previousArg }) {
+                return currentArg !== previousArg
+            },
         }),
         getItem: build.query({
             query: (id) => `/${id}`,
