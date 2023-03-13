@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query'
 import { cardApi } from './cardApi'
-import counterReduced from "./pageSlice"
+import counterReducer from "./slices/pageSlice"
+import userReducer from "./slices/userSlice"
 
 export const store = configureStore({
     reducer: {
-        page: counterReduced,
+        page: counterReducer,
+        user: userReducer,
         [cardApi.reducerPath]: cardApi.reducer,
     },
     // Adding the api middleware enables caching, invalidation, polling,

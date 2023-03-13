@@ -17,16 +17,19 @@ code {
   margin: 0;
   box-sizing: border-box;
 }
-.top-to-btm{
+
+.top-to-btm {
   position: relative;
 }
-.icon-position{
+
+.icon-position {
   position: fixed;
   bottom: 40px;
   right: 15px;
   z-index: 20;
 }
-.icon-style{
+
+.icon-style {
   background-color: #47bc0d;
   border: 2px solid #fff;
   border-radius: 50%;
@@ -37,12 +40,14 @@ code {
   animation: movebtn 3s ease-in-out infinite;
   transition: all .5s ease-in-out;
 }
-.icon-style:hover{
+
+.icon-style:hover {
   animation: none;
   background: #fff;
   color: #d31fcd;
   border: 2px solid #551B54;
 }
+
 @keyframes movebtn {
   0% {
     transform: translateY(0px);
@@ -59,4 +64,33 @@ code {
   100% {
     transform: translateY(0px);
   }
+}
+
+.auth-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  margin: 10px auto 20px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+
+  &:hover {
+    background-color: #4CAF50;
+    color: white;
+  }
+}
+.auth-info{
+  position: absolute;
+  left: 20px;
+  top: 0;
+  color: #0fa459;
 }

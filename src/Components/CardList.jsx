@@ -5,7 +5,7 @@ import MyCardLoader from "./MyCardLoader";
 import MyButton from "./UI/MyButton/MyButton";
 import ScrollBtn from "./ScrollBtn";
 import {useDispatch, useSelector} from "react-redux";
-import {setPage} from "../store/pageSlice";
+import {setPage} from "../store/slices/pageSlice";
 
 const CardList = ({filterQuery}) => {
     // const [page, setPage] = React.useState(1);
