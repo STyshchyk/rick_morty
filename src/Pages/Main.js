@@ -1,5 +1,5 @@
 import React from 'react';
-import svgLogo from '../scss/Logo.svg'
+import svgLogo from '../Assets/Logo.svg'
 import CardList from "../Components/CardList";
 
 function Main() {

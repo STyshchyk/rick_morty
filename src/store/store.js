@@ -1,10 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query'
 import { cardApi } from './cardApi'
+import counterReduced from "./pageSlice"
 
 export const store = configureStore({
     reducer: {
-        // Add the generated reducer as a specific top-level slice
+        page: counterReduced,
         [cardApi.reducerPath]: cardApi.reducer,
     },
     // Adding the api middleware enables caching, invalidation, polling,
