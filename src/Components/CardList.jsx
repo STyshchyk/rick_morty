@@ -10,9 +10,12 @@ import {setPage} from "../store/slices/pageSlice";
 const CardList = ({filterQuery}) => {
     // const [page, setPage] = React.useState(1);
     const  getPage = useSelector(state => state.page.value)
-    const {data, isLoading, isError} = useGetGoodsQuery(`?page=${getPage}`)
+    const {data = [], isLoading, isError} = useGetGoodsQuery(`?page=${getPage}` , {
+        selectFromResult: ({ data= [] }) => ({
+            data: [...data].sort((a, b) => a.name.localeCompare(b.name)),
+        }),
+    })
     const dispatch = useDispatch();
-
     function sortItems() {
         if (isLoading || filterQuery === "") return data;
         return data.filter(elem => {
