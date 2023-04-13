@@ -1,7 +1,7 @@
 import React from "react"
 import ContentLoader from "react-content-loader"
 
-const MyCardLoader = (props) => (
+const MyCardLoader = () => (
     <ContentLoader
         speed={2}
         width={240}
@@ -9,7 +9,6 @@ const MyCardLoader = (props) => (
         viewBox="0 0 240 240"
         backgroundColor="#ffffff"
         foregroundColor="#b5e8c9"
-        {...props}
     >
         <rect x="505" y="198" rx="3" ry="3" width="88" height="6" />
         <rect x="569" y="205" rx="3" ry="3" width="52" height="6" />

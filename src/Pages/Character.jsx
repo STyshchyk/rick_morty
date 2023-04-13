@@ -8,11 +8,9 @@ import ScrollBtn from "../Components/ScrollBtn";
 
 const Character = () => {
     const navigate = useNavigate();
-
     function handleClick() {
         navigate("/");
     }
-
     const {id} = useParams();
     const {data, isLoading, isError} = useGetItemQuery(id);
 

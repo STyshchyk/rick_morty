@@ -1,14 +1,9 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {Link} from "react-router-dom";
+import {ICardProps} from "../store/cardApi";
 
-const Card = (props) => {
-    const {
-        personImg,
-        personName,
-        personRace,
-        id
-    } = props;
 
+const Card:FC<ICardProps> = ({personImg, personRace, personName, id}) => {
     return (
         <Link to={`card/${id}`}>
             <div
@@ -20,7 +15,6 @@ const Card = (props) => {
                     <p>{personName}</p>
                     <p>{personRace}</p>
                 </div>
-
             </div>
         </Link>
     );

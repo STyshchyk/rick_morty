@@ -26,10 +26,10 @@ const router = createHashRouter([
 
 
 root.render(
-  //  <React.StrictMode>
+    <React.StrictMode>
         <Provider store={store}>
             <RouterProvider router={router} base={"/"}/>
         </Provider>
-   // </React.StrictMode>
+   </React.StrictMode>
 );
 

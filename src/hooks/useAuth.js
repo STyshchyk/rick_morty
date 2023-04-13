@@ -3,9 +3,10 @@ import {useDispatch, useSelector} from "react-redux";
 import {app, provider} from "../firebase"
 import {getAuth, signInWithPopup, signOut} from "firebase/auth";
 import {removeUser, setUser} from "../store/slices/userSlice";
+import {useAppSelector} from "../store/hooks";
 
 export function useAuth() {
-    const {email,  error} = useSelector(state => state.user);
+    const {email,  error} = useAppSelector(setUser);
     const dispatch = useDispatch();
     const auth = getAuth(app);
 
